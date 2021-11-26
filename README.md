@@ -52,7 +52,7 @@ In order to prevent multicollinearity, one of the features, lesser correlated wi
 
 Reducing the dimension of the dataset using feature importances improved the linear regression model performance by 99.1%, decreased the training time by 64.5% and the inference time by 94.4%. For model built with random forest, performance improved by 21.7% while training and inference time decreased by 23.9.9% and 69.7% respectively.
 
-![alt text](https://github.com/adeyinkaoresanya/Ames-House_Price-Regression-Model/blob/main/images/Models%20Table.PNG "models table")
+![alt text](https://github.com/adeyinkaoresanya/Ames-House_Price-Regression-Model/blob/main/images/Models_Table.PNG "models table")
 
 This shows that high dimensionality makes linear models give a poor performance unlike tree models. Overall, quality is better than quantity when building machine learning models.
 

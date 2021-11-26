@@ -3,16 +3,16 @@
 The goal of this project was to predict the price of a home in Ames, Iowa, based on certain characteristics of the building. This was carried out using basic algorithms such as Linear Regression and Random Forest. This problem is a regression problem.
 
 # About the data
-The dataset, downloaded from [Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques), contained information on 2919 houses in Ames. This was divided into train set [1460 rows, 81 columns] and test set [1459 rows, 80 columns], consisting of 36 numeric variables, 44 categorical variables and a numeric label (present in the train set).
+The dataset, downloaded from [Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques), contained information on 2919 houses in Ames. This was divided into train set [1460 rows, 81 columns] and test set [1459 rows, 80 columns], consisting of 36 numeric variables, 44 categorical variables and a numeric label (present in the train set). The features centred around location of the building, characteristics of the building itself, year of construction or renovation.
 
 ## Exploratory Analysis
 * The data had a lot of categorical variables and contained considerable amount of missing values in 19 variables.
 
-![alt text](images\Distribution of missing values.PNG "Distribution of missing values")
+![alt text](https://github.com/adeyinkaoresanya/Ames-House_Price-Regression-Model/blob/main/images/Distribution%20of%20missing%20values.PNG "Distribution of missing values")
 
 * The distribution of the target variable, 'SalePrice' showed peakedness and positive skewness but no zero values, implying the variable is not normally distributed, as is common with price variables. 
  
- ![alt text](images\Distribution of sale price.PNG "Distribution of sale price")
+ ![alt text](https://github.com/adeyinkaoresanya/Ames-House_Price-Regression-Model/blob/main/images/Distribution%20of%20sale%20price.PNG "Distribution of sale price")
 
 As this could pose a problem when training linear algorithms, log transformation was carried out to normalise it.
 
@@ -24,7 +24,7 @@ As this could pose a problem when training linear algorithms, log transformation
 3.  'TotRmsAbvGrd' vs 'GrLivArea' 
 4.  'YearBuilt' vs 'GarageYrBlt'
 
-![alt text](images\Correlated features.PNG "Correlated features")
+![alt text](https://github.com/adeyinkaoresanya/Ames-House_Price-Regression-Model/blob/main/images/Correlated%20features.PNG "Correlated features")
 
 In order to prevent multicollinearity, one of the features, lesser correlated with the target variable was dropped. 
 
@@ -48,15 +48,13 @@ In order to prevent multicollinearity, one of the features, lesser correlated wi
 
 *	Two models were built using Linear Regression and Random Forest algorithms. These gave a RMSE score of 1.248 and 0.138 respectively on the validation set. To achieve a RMSE threshold of less than 0.14 according to the project requirement, features driving the model performance were selected using the Random Forest's feature_importances_ method. 
 
-![alt text](images\important features.PNG "Feature importances")
+![alt text](https://github.com/adeyinkaoresanya/Ames-House_Price-Regression-Model/blob/main/images/important%20features.PNG "Feature importances")
 
-Reducing the dimensionality of the dataset improved the linear regression model performance by 99.1%, decreased the training time by 57.1% and the inference time by 12.5%.
+Reducing the dimensionality of the dataset improved the linear regression model performance by 99.1%, decreased the training time by 57.1% and the inference time by 12.5%. For model built with random forest, performance improved by 1.4% while training and inference time decreased by 25.2% and 1.6% respectively.
 
-For model built with random forest, performance improved by 1.4% while training and inference time decreased by 25.2% and 1.6% respectively.
+![alt text](https://github.com/adeyinkaoresanya/Ames-House_Price-Regression-Model/blob/main/images/Models%20Table.PNG "models table")
 
-![alt text](images\Models Table.PNG "models table")
-
-This shows that high dimensionality makes linear models give a poor performance  unlike tree models. Overall, quality is better than quantity when building machine learning models
+This shows that high dimensionality makes linear models give a poor performance unlike tree models. Overall, quality is better than quantity when building machine learning models.
 
 ## Conclusion
 The model built with Random Forest met the requirement of the project and a leaderboard score of 0.139 was achieved.

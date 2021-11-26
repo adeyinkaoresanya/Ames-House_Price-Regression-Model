@@ -8,10 +8,14 @@ The dataset, downloaded from [Kaggle](https://www.kaggle.com/c/house-prices-adva
 ## Exploratory Analysis
 * The data had a lot of categorical variables and contained considerable amount of missing values in 19 variables.
 
+![alt text](images\Distribution of missing values.PNG "Distribution of missing values")
 
+* The distribution of the target variable, 'SalePrice' showed peakedness and positive skewness but no zero values, implying the variable is not normally distributed, as is common with price variables. 
+ 
+ ![alt text](images\Distribution of sale price.PNG "Distribution of sale price")
 
+As this could pose a problem when training linear algorithms, log transformation was carried out to normalise it.
 
-* The distribution of the target variable, 'SalePrice' showed peakedness and positive skewness but no zero values, implying the variable is not normally distributed, as is common with price variables. As this could pose a problem when training linear algorithms, log transformation was carried out to normalise it.
 
 *	On observing the numeric features, some were highly correlated with one another, for instance:
 
@@ -20,9 +24,12 @@ The dataset, downloaded from [Kaggle](https://www.kaggle.com/c/house-prices-adva
 3.  'TotRmsAbvGrd' vs 'GrLivArea' 
 4.  'YearBuilt' vs 'GarageYrBlt'
 
+![alt text](images\Correlated features.PNG "Correlated features")
+
 In order to prevent multicollinearity, one of the features, lesser correlated with the target variable was dropped. 
 
 * Manual inspection of the categorical variables shows that some were ordinal features which had a meaningful ranking. These were transformed into discrete variables.
+
 * Neighborhood has big impact on house prices and having a pool in the building increases the price substantially.
 
 
@@ -39,17 +46,17 @@ In order to prevent multicollinearity, one of the features, lesser correlated wi
 
 ## Model Building and Evaluation
 
-*	Two models were built using Linear Regression and Random Forest algorithms. These gave a RMSE score of 1.248 and 0.138 respectively on the validation set. To achieve a RMSE threshold of less than 0.14 according to the project requirement, features driving the model performance were selected using the Random Forest's feature_importances_ method. Reducing the dimension of the dataset using feature importances improved the linear regression model performance by 99.1%, decreased the training time by 57.1% and the inference time by 12.5%.
+*	Two models were built using Linear Regression and Random Forest algorithms. These gave a RMSE score of 1.248 and 0.138 respectively on the validation set. To achieve a RMSE threshold of less than 0.14 according to the project requirement, features driving the model performance were selected using the Random Forest's feature_importances_ method. 
+
+![alt text](images\important features.PNG "Feature importances")
+
+Reducing the dimensionality of the dataset improved the linear regression model performance by 99.1%, decreased the training time by 57.1% and the inference time by 12.5%.
 
 For model built with random forest, performance improved by 1.4% while training and inference time decreased by 25.2% and 1.6% respectively.
 
-![alt text](https://github.com/adeyinkaoresanya/Zindi_DSN_2020_ExpressoChurnPrediction/blob/master/Feature%20importances.png "Feature importances")
+![alt text](images\Models Table.PNG "models table")
 
-## Conclusion
 This shows that high dimensionality makes linear models give a poor performance  unlike tree models. Overall, quality is better than quantity when building machine learning models
 
-## Recommendations
-* A customer micro-segmentation should be conducted in order to offer personalised incentives that the likely churner would find difficult to refuse.
-* Set up a customer engagement strategy for preventing customer inactivity.
-
-
+## Conclusion
+The model built with Random Forest met the requirement of the project and a leaderboard score of 0.139 was achieved.

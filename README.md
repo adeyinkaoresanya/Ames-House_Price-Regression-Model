@@ -50,7 +50,7 @@ In order to prevent multicollinearity, one of the features, lesser correlated wi
 
 ![alt text](https://github.com/adeyinkaoresanya/Ames-House_Price-Regression-Model/blob/main/images/important%20features.PNG "Feature importances")
 
-Reducing the dimensionality of the dataset improved the linear regression model performance by 99.1%, decreased the training time by 57.1% and the inference time by 12.5%. For model built with random forest, performance improved by 1.4% while training and inference time decreased by 25.2% and 1.6% respectively.
+Reducing the dimension of the dataset using feature importances improved the linear regression model performance by 99.1%, decreased the training time by 64.5% and the inference time by 94.4%. For model built with random forest, performance improved by 21.7% while training and inference time decreased by 23.9.9% and 69.7% respectively.
 
 ![alt text](https://github.com/adeyinkaoresanya/Ames-House_Price-Regression-Model/blob/main/images/Models%20Table.PNG "models table")
 
